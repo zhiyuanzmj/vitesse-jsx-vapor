@@ -6,7 +6,7 @@
     "antfu.goto-alias",
     "csstools.postcss",
     "dbaeumer.vscode-eslint",
-    "vue.volar",
+    "zhiyuanzmj.vscode-ts-macro",
     "streetsidesoftware.code-spell-checker"
   ]
 }
