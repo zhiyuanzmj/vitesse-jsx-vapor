@@ -7,7 +7,6 @@ export default defineVaporComponent((_: InputHTMLAttributes) => {
     <input
       id="input"
       v-model={modelValue.value}
-      v-bind="$attrs"
       type="text"
       p="x-4 y-2"
       w="250px"
