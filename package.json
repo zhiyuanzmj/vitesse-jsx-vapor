@@ -3,7 +3,7 @@
   "private": true,
   "packageManager": "pnpm@9.15.3",
   "scripts": {
-    "build": "vite-ssg build",
+    "build": "vite build",
     "dev": "vite --port 3333",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -25,8 +25,8 @@
     "nprogress": "^0.2.0",
     "pinia": "^3.0.1",
     "volar-plugin-ignore-attributes": "^0.2.2",
-    "vue": "https://pkg.pr.new/vue@34957eb",
-    "vue-jsx-vapor": "link:/Users/zmj/Documents/vue-jsx-vapor/packages/vue-jsx-vapor",
+    "vue": "https://pkg.pr.new/vue@13061",
+    "vue-jsx-vapor": "^2.1.3",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
