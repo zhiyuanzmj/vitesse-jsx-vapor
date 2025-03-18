@@ -11,7 +11,7 @@
     "test": "vitest",
     "test:e2e": "cypress open",
     "test:unit": "vitest",
-    "typecheck": "vue-tsc --noEmit",
+    "typecheck": "tsmc --noEmit",
     "up": "taze major -I",
     "postinstall": "npx simple-git-hooks",
     "sizecheck": "npx vite-bundle-visualizer"
@@ -32,6 +32,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^3.13.0",
     "@iconify-json/carbon": "^1.2.5",
+    "@ts-macro/tsc": "^0.1.25",
     "@types/nprogress": "^0.2.3",
     "@unocss/eslint-config": "^65.4.0",
     "@vitejs/plugin-vue": "^5.2.1",

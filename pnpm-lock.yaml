@@ -53,6 +53,9 @@ importers:
       '@iconify-json/carbon':
         specifier: ^1.2.5
         version: 1.2.5
+      '@ts-macro/tsc':
+        specifier: ^0.1.25
+        version: 0.1.25(typescript@5.7.3)
       '@types/nprogress':
         specifier: ^0.2.3
         version: 0.2.3
@@ -1560,8 +1563,15 @@ packages:
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
 
+  '@ts-macro/language-plugin@0.1.25':
+    resolution: {integrity: sha512-SL5OxxJhSqq06Nic9NV94M8PopLktNybo//MHhTkazb/y80jQL1lQcl1ueU+dtwEWd8tjpB0OBLsGo1OlN9uVQ==}
+
   '@ts-macro/language-server@0.0.4':
     resolution: {integrity: sha512-Y7aJFE/p/XyWViPxU0zIsiwLhExkOr6zEujimLeqPqY+b32vEttOQkEfiNYxCY6cUC8U5/wQmq/wePgrWO5/Vw==}
+    hasBin: true
+
+  '@ts-macro/tsc@0.1.25':
+    resolution: {integrity: sha512-V7LgrH3zVmiIKQSf83NIRUS+KDox2ZLpFIQ3pLKbn/aE5i+kE+JAVmi8A95FYUNi7jEOseRWFgt7F2B7NpZ51w==}
     hasBin: true
 
   '@types/debug@4.1.12':
@@ -7198,6 +7208,17 @@ snapshots:
       magic-string: 0.25.9
       string.prototype.matchall: 4.0.8
 
+  '@ts-macro/language-plugin@0.1.25(typescript@5.7.3)':
+    dependencies:
+      '@volar/language-core': 2.4.12
+      '@volar/typescript': 2.4.12
+      jiti: 2.4.2
+      ts-macro: 0.1.25(typescript@5.7.3)
+      unplugin-utils: 0.2.4
+      vscode-uri: 3.0.8
+    transitivePeerDependencies:
+      - typescript
+
   '@ts-macro/language-server@0.0.4(@volar/language-service@2.4.12)(typescript@5.7.3)':
     dependencies:
       '@volar/language-server': 2.4.12
@@ -7207,6 +7228,13 @@ snapshots:
       volar-service-typescript: 0.0.64(@volar/language-service@2.4.12)
     transitivePeerDependencies:
       - '@volar/language-service'
+      - typescript
+
+  '@ts-macro/tsc@0.1.25(typescript@5.7.3)':
+    dependencies:
+      '@ts-macro/language-plugin': 0.1.25(typescript@5.7.3)
+      '@volar/typescript': 2.4.12
+    transitivePeerDependencies:
       - typescript
 
   '@types/debug@4.1.12':
