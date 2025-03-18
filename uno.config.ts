@@ -8,6 +8,7 @@ import {
   presetTypography,
   presetUno,
   presetWebFonts,
+  transformerAttributifyJsx,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
@@ -35,6 +36,7 @@ export default defineConfig({
   ],
   transformers: [
     transformerDirectives(),
+    transformerAttributifyJsx(),
     transformerVariantGroup(),
   ],
   safelist: 'prose prose-sm m-auto text-left'.split(' '),

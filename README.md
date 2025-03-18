@@ -3,13 +3,13 @@
 </p>
 
 <p align='center'>
-Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
+Mocking up web app with <b>Vitesse JSX Vapor</b><sup><em>(speed)</em></sup><br>
 </p>
 
 <br>
 
 <p align='center'>
-<a href="https://vitesse.netlify.app/">Live Demo</a>
+<a href="https://vitesse-jsx-vapor.netlify.app/">Live Demo</a>
 </p>
 
 <br>
@@ -19,7 +19,7 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 <br>
 
 <p align='center'>
-<b>English</b> | <a href="https://github.com/antfu-collective/vitesse/blob/main/README.zh-CN.md">简体中文</a>
+<b>English</b> | <a href="https://github.com/zhiyuanzmj/vitesse-jsx-vapor/blob/main/README.zh-CN.md">简体中文</a>
 <!-- Contributors: Thanks for getting interested, however we DON'T accept new translations to the README, thanks. -->
 </p>
 
@@ -43,11 +43,7 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 
 - 😃 [Use icons from any icon sets with classes](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
 
-- 🌍 [I18n ready](./locales)
-
 - 🔎 [Component Preview](https://github.com/johnsoncodehk/vite-plugin-vue-component-preview)
-
-- 🗒 [Markdown Support](https://github.com/unplugin/unplugin-vue-markdown)
 
 - 🔥 Use the [new `<script setup>` syntax](https://github.com/vuejs/rfcs/pull/227)
 
@@ -86,10 +82,6 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 - [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use Vue Composition API and others without importing
 - [`unplugin-vue-macros`](https://github.com/sxzz/unplugin-vue-macros) - Explore and extend more macros and syntax sugar to Vue.
 - [`vite-plugin-pwa`](https://github.com/antfu/vite-plugin-pwa) - PWA
-- [`unplugin-vue-markdown`](https://github.com/unplugin/unplugin-vue-markdown) - Markdown as components / components in Markdown
-  - [`@shikijs/markdown-it`](https://github.com/shikijs/shiki) - [Shiki](https://github.com/shikijs/shiki) for syntax highlighting
-- [Vue I18n](https://github.com/intlify/vue-i18n-next) - Internationalization
-  - [`unplugin-vue-i18n`](https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n) - unplugin for Vue I18n
 - [VueUse](https://github.com/antfu/vueuse) - collection of useful composition APIs
 - [`vite-ssg-sitemap`](https://github.com/jbaubree/vite-ssg-sitemap) - Sitemap generator
 - [`@vueuse/head`](https://github.com/vueuse/head) - manipulate document head reactively
@@ -113,7 +105,6 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
   - [Vite](https://marketplace.visualstudio.com/items?itemName=antfu.vite) - Fire up Vite server automatically
   - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) - Vue 3 `<script setup>` IDE support
   - [Iconify IntelliSense](https://marketplace.visualstudio.com/items?itemName=antfu.iconify) - Icon inline display and autocomplete
-  - [i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally) - All in one i18n support
   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 ## Variations
