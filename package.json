@@ -25,8 +25,8 @@
     "nprogress": "^0.2.0",
     "pinia": "^3.0.1",
     "volar-plugin-ignore-attributes": "^0.2.2",
-    "vue": "https://pkg.pr.new/vue@eeab9c4",
-    "vue-jsx-vapor": "^2.1.4",
+    "vue": "https://pkg.pr.new/vue@b43f4f5",
+    "vue-jsx-vapor": "^2.1.7",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
@@ -53,7 +53,7 @@
     "typescript": "^5.7.3",
     "unocss": "^65.4.0",
     "unplugin-auto-import": "^19.0.0",
-    "unplugin-vue-router": "https://pkg.pr.new/unplugin-vue-router@b486dd1",
+    "unplugin-vue-router": "https://pkg.pr.new/unplugin-vue-router@82ecaae",
     "vite": "^6.0.7",
     "vite-bundle-visualizer": "^1.2.1",
     "vite-plugin-inspect": "^10.0.6",
