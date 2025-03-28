@@ -26,7 +26,7 @@
     "pinia": "^3.0.1",
     "volar-plugin-ignore-attributes": "^0.2.2",
     "vue": "https://pkg.pr.new/vue@b43f4f5",
-    "vue-jsx-vapor": "^2.1.7",
+    "vue-jsx-vapor": "^2.1.8",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {

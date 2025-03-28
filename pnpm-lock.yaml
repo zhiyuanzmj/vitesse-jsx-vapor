@@ -41,8 +41,8 @@ importers:
         specifier: https://pkg.pr.new/vue@b43f4f5
         version: https://pkg.pr.new/vue@b43f4f5(typescript@5.7.3)
       vue-jsx-vapor:
-        specifier: ^2.1.7
-        version: 2.1.7(esbuild@0.23.1)(rollup@4.30.1)(typescript@5.7.3)(vite@6.0.7(@types/node@20.2.3)(jiti@2.4.2)(terser@5.17.6)(tsx@4.19.2)(yaml@2.7.0))(vue-tsc@2.2.0(typescript@5.7.3))(vue@https://pkg.pr.new/vue@b43f4f5(typescript@5.7.3))
+        specifier: ^2.1.8
+        version: 2.1.8(esbuild@0.23.1)(rollup@4.30.1)(typescript@5.7.3)(vite@6.0.7(@types/node@20.2.3)(jiti@2.4.2)(terser@5.17.6)(tsx@4.19.2)(yaml@2.7.0))(vue-tsc@2.2.0(typescript@5.7.3))(vue@https://pkg.pr.new/vue@b43f4f5(typescript@5.7.3))
       vue-router:
         specifier: ^4.5.0
         version: 4.5.0(vue@https://pkg.pr.new/vue@b43f4f5(typescript@5.7.3))
@@ -1881,15 +1881,15 @@ packages:
   '@vscode/l10n@0.0.18':
     resolution: {integrity: sha512-KYSIHVmslkaCDyw013pphY+d7x1qV8IZupYfeIfzNA+nsaWHbn5uPuQRvdRFsa9zFzGeudPuoGoZ1Op4jrJXIQ==}
 
-  '@vue-jsx-vapor/babel@2.1.7':
-    resolution: {integrity: sha512-MqO0nwJVzCDK/SGByxb7eVbuY74pFYCOKLIhw37pmf5FT4A89ppHJi6lm8dJixGHJGeKjk490TNpEtizepDLAA==}
+  '@vue-jsx-vapor/babel@2.1.8':
+    resolution: {integrity: sha512-Uheud7LXVvqUz5gSWxGgD+Lr/gLoyJNgtC19D0G6F95sieTGbeJUK9k/k3xNB++qgqbvO/v/dR1tEx72zOW6pw==}
 
-  '@vue-jsx-vapor/compiler@2.1.7':
-    resolution: {integrity: sha512-kO59EkKwcWnrK1waL6aWTnYcgwEir2OhIng0WPdBbV4itAZ8o0j8soW1+7YivzFU0AzEv6rhtuRcfh1wyxU7CQ==}
+  '@vue-jsx-vapor/compiler@2.1.8':
+    resolution: {integrity: sha512-Id/x6x7WxYgbsaupaRNln17jv/xP4VZS7lPw3al+YISiyBN9+GIQCf/6f0nsQPvUOhRdi2Ys7JiHJUUqYmfrgw==}
 
-  '@vue-jsx-vapor/macros@2.1.7':
-    resolution: {integrity: sha512-hTEyxS9ghSHc9bp+uoy/uxb95xd2IrmdMLzHCr3KEI0ziCi4hXrAnX1UysqCQsBY9bUEmQJFloJNcYFLeqwExQ==}
-    version: 2.1.7
+  '@vue-jsx-vapor/macros@2.1.8':
+    resolution: {integrity: sha512-Lz/T4W2IeXhaJKbzx6zrZZfcInQiX5OVle8yfKwwv4p8Q5ucv9/skcEPt8LHkcVccRNNkkYAqSMbgvgXj+wkBw==}
+    version: 2.1.8
     peerDependencies:
       '@nuxt/kit': ^3
       '@nuxt/schema': ^3
@@ -5448,9 +5448,9 @@ packages:
     peerDependencies:
       vue: ^3.4.37
 
-  vue-jsx-vapor@2.1.7:
-    resolution: {integrity: sha512-hrTq91AEJRU9FoQDjlWKY0yE7OMdWb39dOW9HuE8uJuOgaD29owuJ5ee0Rcqq2z6Q7hySR5/EERr0+kj8QWSsQ==}
-    version: 2.1.7
+  vue-jsx-vapor@2.1.8:
+    resolution: {integrity: sha512-3kd6OZJSmuyc7Dug7+ustNMSQ++OXxJaZrOXLhfymnxfpuWKqq0CQQeAXuwU5zzeMTpiiI+Kkh1yJ6KsSR08rQ==}
+    version: 2.1.8
     peerDependencies:
       '@nuxt/kit': ^3
       '@nuxt/schema': ^3
@@ -6651,7 +6651,7 @@ snapshots:
   '@babel/template@7.25.0':
     dependencies:
       '@babel/code-frame': 7.24.7
-      '@babel/parser': 7.26.3
+      '@babel/parser': 7.26.10
       '@babel/types': 7.26.3
 
   '@babel/template@7.26.9':
@@ -6664,7 +6664,7 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.24.7
       '@babel/generator': 7.25.0
-      '@babel/parser': 7.26.3
+      '@babel/parser': 7.26.10
       '@babel/template': 7.25.0
       '@babel/types': 7.26.3
       debug: 4.4.0(supports-color@8.1.1)
@@ -7681,19 +7681,19 @@ snapshots:
 
   '@vscode/l10n@0.0.18': {}
 
-  '@vue-jsx-vapor/babel@2.1.7':
+  '@vue-jsx-vapor/babel@2.1.8':
     dependencies:
       '@babel/core': 7.26.10
       '@babel/parser': 7.26.10
       '@babel/plugin-syntax-jsx': 7.25.9(@babel/core@7.26.10)
       '@babel/traverse': 7.26.10
       '@babel/types': 7.26.10
-      '@vue-jsx-vapor/compiler': 2.1.7
+      '@vue-jsx-vapor/compiler': 2.1.8
       source-map-js: 1.2.1
     transitivePeerDependencies:
       - supports-color
 
-  '@vue-jsx-vapor/compiler@2.1.7':
+  '@vue-jsx-vapor/compiler@2.1.8':
     dependencies:
       '@babel/parser': 7.26.10
       '@babel/types': 7.26.10
@@ -7701,7 +7701,7 @@ snapshots:
       '@vue/compiler-vapor': https://pkg.pr.new/@vue/compiler-vapor@b43f4f5
       '@vue/shared': https://pkg.pr.new/@vue/shared@b43f4f5
 
-  '@vue-jsx-vapor/macros@2.1.7(esbuild@0.23.1)(rollup@4.30.1)(typescript@5.7.3)(vite@6.0.7(@types/node@20.2.3)(jiti@2.4.2)(terser@5.17.6)(tsx@4.19.2)(yaml@2.7.0))(vue@https://pkg.pr.new/vue@b43f4f5(typescript@5.7.3))':
+  '@vue-jsx-vapor/macros@2.1.8(esbuild@0.23.1)(rollup@4.30.1)(typescript@5.7.3)(vite@6.0.7(@types/node@20.2.3)(jiti@2.4.2)(terser@5.17.6)(tsx@4.19.2)(yaml@2.7.0))(vue@https://pkg.pr.new/vue@b43f4f5(typescript@5.7.3))':
     dependencies:
       '@vue-macros/common': 3.0.0-beta.7(vue@https://pkg.pr.new/vue@b43f4f5(typescript@5.7.3))
       '@vue/compiler-sfc': https://pkg.pr.new/@vue/compiler-sfc@b43f4f5
@@ -7832,7 +7832,7 @@ snapshots:
 
   '@vue/compiler-core@3.5.13':
     dependencies:
-      '@babel/parser': 7.26.3
+      '@babel/parser': 7.26.10
       '@vue/shared': 3.5.13
       entities: 4.5.0
       estree-walker: 2.0.2
@@ -11937,14 +11937,14 @@ snapshots:
     dependencies:
       vue: https://pkg.pr.new/vue@b43f4f5(typescript@5.7.3)
 
-  vue-jsx-vapor@2.1.7(esbuild@0.23.1)(rollup@4.30.1)(typescript@5.7.3)(vite@6.0.7(@types/node@20.2.3)(jiti@2.4.2)(terser@5.17.6)(tsx@4.19.2)(yaml@2.7.0))(vue-tsc@2.2.0(typescript@5.7.3))(vue@https://pkg.pr.new/vue@b43f4f5(typescript@5.7.3)):
+  vue-jsx-vapor@2.1.8(esbuild@0.23.1)(rollup@4.30.1)(typescript@5.7.3)(vite@6.0.7(@types/node@20.2.3)(jiti@2.4.2)(terser@5.17.6)(tsx@4.19.2)(yaml@2.7.0))(vue-tsc@2.2.0(typescript@5.7.3))(vue@https://pkg.pr.new/vue@b43f4f5(typescript@5.7.3)):
     dependencies:
       '@babel/core': 7.26.10
       '@babel/plugin-transform-typescript': 7.26.8(@babel/core@7.26.10)
       '@types/hash-sum': 1.0.2
-      '@vue-jsx-vapor/babel': 2.1.7
-      '@vue-jsx-vapor/compiler': 2.1.7
-      '@vue-jsx-vapor/macros': 2.1.7(esbuild@0.23.1)(rollup@4.30.1)(typescript@5.7.3)(vite@6.0.7(@types/node@20.2.3)(jiti@2.4.2)(terser@5.17.6)(tsx@4.19.2)(yaml@2.7.0))(vue@https://pkg.pr.new/vue@b43f4f5(typescript@5.7.3))
+      '@vue-jsx-vapor/babel': 2.1.8
+      '@vue-jsx-vapor/compiler': 2.1.8
+      '@vue-jsx-vapor/macros': 2.1.8(esbuild@0.23.1)(rollup@4.30.1)(typescript@5.7.3)(vite@6.0.7(@types/node@20.2.3)(jiti@2.4.2)(terser@5.17.6)(tsx@4.19.2)(yaml@2.7.0))(vue@https://pkg.pr.new/vue@b43f4f5(typescript@5.7.3))
       '@vue-macros/volar': 3.0.0-beta.7(typescript@5.7.3)(vue-tsc@2.2.0(typescript@5.7.3))(vue@https://pkg.pr.new/vue@b43f4f5(typescript@5.7.3))
       hash-sum: 2.0.0
       ts-macro: 0.1.25(typescript@5.7.3)
