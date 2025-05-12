@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.15.3",
+  "packageManager": "pnpm@10.9.0",
   "scripts": {
     "build": "vite build",
     "dev": "vite --port 3333",
@@ -23,23 +23,26 @@
     "@vueuse/head": "^2.0.0",
     "beasties": "^0.2.0",
     "nprogress": "^0.2.0",
-    "pinia": "^3.0.1",
-    "volar-plugin-ignore-attributes": "^0.2.2",
-    "vue": "https://pkg.pr.new/vue@b43f4f5",
-    "vue-jsx-vapor": "^2.1.8",
-    "vue-router": "^4.5.0"
+    "pinia": "^3.0.2",
+    "vue": "https://pkg.pr.new/vue@d386396",
+    "vue-jsx-vapor": "^2.3.6",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.13.0",
     "@iconify-json/carbon": "^1.2.5",
+    "@stylistic/eslint-plugin": "^4.2.0",
     "@ts-macro/tsc": "^0.1.25",
+    "@tsslint/config": "^1.5.14",
+    "@tsslint/eslint": "^1.5.14",
     "@types/nprogress": "^0.2.3",
     "@unocss/eslint-config": "^65.4.0",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitejs/plugin-vue-jsx": "^4.1.1",
+    "@vue-jsx-vapor/eslint": "^2.3.0",
     "@vue/test-utils": "^2.4.6",
     "cross-env": "^7.0.3",
-    "cypress": "^13.17.0",
+    "cypress": "^14.3.3",
     "cypress-vite": "^1.6.0",
     "eslint": "^9.18.0",
     "eslint-plugin-cypress": "^4.1.0",
@@ -53,6 +56,7 @@
     "typescript": "^5.7.3",
     "unocss": "^65.4.0",
     "unplugin-auto-import": "^19.0.0",
+    "unplugin-vue-reactivity-function": "^1.1.2",
     "unplugin-vue-router": "https://pkg.pr.new/unplugin-vue-router@82ecaae",
     "vite": "^6.0.7",
     "vite-bundle-visualizer": "^1.2.1",
@@ -63,6 +67,7 @@
     "vite-ssg": "^25.0.0",
     "vite-ssg-sitemap": "^0.8.1",
     "vitest": "^2.1.8",
+    "volar-plugin-ignore-attributes": "^0.2.2",
     "vue-tsc": "^2.2.0"
   },
   "resolutions": {

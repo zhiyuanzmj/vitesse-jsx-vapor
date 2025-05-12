@@ -1,7 +1,7 @@
-export default defineVaporComponent(({
+export default defineComponent(({
   initial = 0,
 }) => {
-  const { count, inc, dec } = useCounter(initial)
+  let { count, inc, dec } = $useCounter(initial)
 
   return (
     <div>

@@ -1,14 +1,14 @@
-import { acceptHMRUpdate, defineStore } from 'pinia'
+import { acceptHMRUpdate } from 'pinia'
 
-export const useUserStore = defineStore('user', () => {
+export const useUserStore = defineStore$('user', () => {
   /**
    * Current name of the user.
    */
-  const savedName = ref('')
-  const previousNames = ref(new Set<string>())
+  let savedName = $ref('')
+  const previousNames = $ref(new Set<string>())
 
-  const usedNames = computed(() => Array.from(previousNames.value))
-  const otherNames = computed(() => usedNames.value.filter(name => name !== savedName.value))
+  const usedNames = $computed(() => Array.from(previousNames))
+  const otherNames = $computed(() => usedNames.filter(name => name !== savedName))
 
   /**
    * Changes the current name of the user and saves the one that was used
@@ -17,10 +17,10 @@ export const useUserStore = defineStore('user', () => {
    * @param name - new name to set
    */
   function setNewName(name: string) {
-    if (savedName.value)
-      previousNames.value.add(savedName.value)
+    if (savedName)
+      previousNames.add(savedName)
 
-    savedName.value = name
+    savedName = name
   }
 
   return {

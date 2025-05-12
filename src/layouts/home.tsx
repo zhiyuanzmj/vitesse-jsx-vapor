@@ -1,7 +1,7 @@
 import TheFooter from '../components/TheFooter'
 
 export default defineComponent(() => {
-  return () => (
+  return (
     <main
       px-4
       py-10

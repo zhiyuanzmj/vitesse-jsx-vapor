@@ -1,6 +1,6 @@
 import { routes } from 'vue-router/auto-routes'
 
-export default defineVaporComponent(() => {
+export default defineComponent(() => {
   const router = useRouter()
 
   return (
@@ -22,7 +22,7 @@ export default defineVaporComponent(() => {
       <div mb-3 mt-6 op70>
         Other pages:
       </div>
-      <nav flex="~ gap-4" justify-center text-xl>
+      <nav flex="~ gap-4" justify-center text-xl mb-6>
         <a v-for={i in routes.filter(i => i.meta?.title)} key={i.path} title="i.meta?.title" icon-btn flex="~ col items-center" onClick={() => router.push(i.path)}>
           <div class={i.meta?.icon} />
           <div text-sm>{ i.meta?.title }</div>

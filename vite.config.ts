@@ -3,6 +3,7 @@ import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import VueReactivityFunction from 'unplugin-vue-reactivity-function/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
@@ -10,7 +11,7 @@ import Inspect from 'vite-plugin-inspect'
 import { VitePWA } from 'vite-plugin-pwa'
 // import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
-import generateSitemap from 'vite-ssg-sitemap'
+// import generateSitemap from 'vite-ssg-sitemap'
 import VueJsxVapor from 'vue-jsx-vapor/vite'
 import 'vitest/config'
 
@@ -22,9 +23,12 @@ export default defineConfig({
   },
 
   plugins: [
+    // https://github.com/zhiyaunzmj/unplugin-vue-reactivity-function
+    VueReactivityFunction(),
+
     // https://github.com/vuejs/vue-jsx-vapor
     VueJsxVapor({
-      interop: true,
+      // interop: true,
       macros: true,
     }),
     Vue(),
@@ -32,7 +36,7 @@ export default defineConfig({
 
     // https://github.com/posva/unplugin-vue-router
     VueRouter({
-      extensions: ['.vue', '.tsx'],
+      extensions: ['.tsx'],
       dts: 'src/typed-router.d.ts',
     }),
 
@@ -57,17 +61,17 @@ export default defineConfig({
         },
       ],
       resolvers: [
-        {
-          type: 'component',
-          resolve: (name) => {
-            if (['RouterLink', 'RouterView'].includes(name)) {
-              return {
-                name,
-                from: 'vue-router',
-              }
-            }
-          },
-        },
+        // {
+        //   type: 'component',
+        //   resolve: (name) => {
+        //     if (['RouterLink', 'RouterView'].includes(name)) {
+        //       return {
+        //         name,
+        //         from: 'vue-router',
+        //       }
+        //     }
+        //   },
+        // },
       ],
       dts: 'src/auto-imports.d.ts',
       dirs: [
@@ -123,16 +127,16 @@ export default defineConfig({
   },
 
   // https://github.com/antfu/vite-ssg
-  ssgOptions: {
-    script: 'async',
-    formatting: 'minify',
-    beastiesOptions: {
-      reduceInlineStyles: false,
-    },
-    onFinished() {
-      generateSitemap()
-    },
-  },
+  // ssgOptions: {
+  //   script: 'async',
+  //   formatting: 'minify',
+  //   beastiesOptions: {
+  //     reduceInlineStyles: false,
+  //   },
+  //   onFinished() {
+  //     generateSitemap()
+  //   },
+  // },
 
   ssr: {
     // TODO: workaround until they support native ESM

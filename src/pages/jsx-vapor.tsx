@@ -1,7 +1,9 @@
-import { defineVaporComponent } from 'vue'
-
-export default defineVaporComponent(() => {
-  return <div>Vue JSX Vapor</div>
+export default defineComponent(() => {
+  return (
+    <div>
+      Vue JSX Vapor
+    </div>
+  )
 })
 
 definePage({

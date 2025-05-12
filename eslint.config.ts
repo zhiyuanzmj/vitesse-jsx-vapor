@@ -5,6 +5,8 @@ export default antfu(
   {
     unocss: true,
     formatters: true,
-    jsx: true,
+    rules: {
+      'prefer-const': 'off',
+    },
   },
 )

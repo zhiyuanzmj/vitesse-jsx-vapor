@@ -1,0 +1,271 @@
+diff --git a/dist/vue-router.mjs b/dist/vue-router.mjs
+index 2fd74f4991fc54267e8be4a65b22fb23a1f2014b..021bb3244bd466b1b863de0799ff3eb46c782c93 100644
+--- a/dist/vue-router.mjs
++++ b/dist/vue-router.mjs
+@@ -715,7 +715,7 @@ function useHistoryStateNavigation(base) {
+         }
+     }
+     function replace(to, data) {
+-        const state = assign({}, history.state, buildState(historyState.value.back, 
++        const state = assign({}, history.state, buildState(historyState.value.back,
+         // keep back and forward entries but override current position
+         to, historyState.value.forward, true), data, { position: historyState.value.position });
+         changeLocation(to, state, true);
+@@ -724,7 +724,7 @@ function useHistoryStateNavigation(base) {
+     function push(to, data) {
+         // Add to current entry the information of where we are going
+         // as well as saving the current position
+-        const currentState = assign({}, 
++        const currentState = assign({},
+         // use current history state to gracefully handle a wrong call to
+         // history.replaceState
+         // https://github.com/vuejs/router/issues/366
+@@ -841,7 +841,7 @@ function createMemoryHistory(base = '') {
+         },
+         go(delta, shouldTrigger = true) {
+             const from = this.location;
+-            const direction = 
++            const direction =
+             // we are considering delta === 0 going forward, but in abstract mode
+             // using 0 for the delta doesn't make sense like it does in html5 where
+             // it reloads the page
+@@ -1587,13 +1587,13 @@ function createRouterMatcher(routes, globalOptions) {
+             name = matcher.record.name;
+             params = assign(
+             // paramsFromLocation is a new object
+-            paramsFromLocation(currentLocation.params, 
++            paramsFromLocation(currentLocation.params,
+             // only keep params that exist in the resolved location
+             // only keep optional params coming from a parent record
+             matcher.keys
+                 .filter(k => !k.optional)
+                 .concat(matcher.parent ? matcher.parent.keys.filter(k => k.optional) : [])
+-                .map(k => k.name)), 
++                .map(k => k.name)),
+             // discard any existing params in the current location that do not exist here
+             // #1497 this ensures better active/exact matching
+             location.params &&
+@@ -2039,7 +2039,7 @@ function onBeforeRouteLeave(leaveGuard) {
+         warn('getCurrentInstance() returned null. onBeforeRouteLeave() must be called at the top of a setup function');
+         return;
+     }
+-    const activeRecord = inject(matchedRouteKey, 
++    const activeRecord = inject(matchedRouteKey,
+     // to avoid warning
+     {}).value;
+     if (!activeRecord) {
+@@ -2061,7 +2061,7 @@ function onBeforeRouteUpdate(updateGuard) {
+         warn('getCurrentInstance() returned null. onBeforeRouteUpdate() must be called at the top of a setup function');
+         return;
+     }
+-    const activeRecord = inject(matchedRouteKey, 
++    const activeRecord = inject(matchedRouteKey,
+     // to avoid warning
+     {}).value;
+     if (!activeRecord) {
+@@ -2848,7 +2848,7 @@ function addDevtools(app, router, matcher) {
+             routes.forEach(resetMatchStateOnRouteRecord);
+             // apply a match state if there is a payload
+             if (payload.filter) {
+-                routes = routes.filter(route => 
++                routes = routes.filter(route =>
+                 // save matches state based on the payload
+                 isRouteMatching(route, payload.filter.toLowerCase()));
+             }
+@@ -3112,7 +3112,7 @@ function createRouter(options) {
+     }
+     const normalizeParams = applyToParams.bind(null, paramValue => '' + paramValue);
+     const encodeParams = applyToParams.bind(null, encodeParam);
+-    const decodeParams = 
++    const decodeParams =
+     // @ts-expect-error: intentionally avoid the type check
+     applyToParams.bind(null, decode);
+     function addRoute(parentOrRoute, route) {
+@@ -3229,7 +3229,7 @@ function createRouter(options) {
+             // keep the hash encoded so fullPath is effectively path + encodedQuery +
+             // hash
+             hash,
+-            query: 
++            query:
+             // if the user is using a custom query lib like qs, we might have
+             // nested objects, so we keep the query as is, meaning it can contain
+             // numbers at `$route.query`, but at the point, the user will have to
+@@ -3306,7 +3306,7 @@ function createRouter(options) {
+                     : data,
+                 force,
+                 replace,
+-            }), 
++            }),
+             // keep original redirectedFrom if it exists
+             redirectedFrom || targetLocation);
+         // if it was a redirect we already called `pushWithRedirect` above
+@@ -3316,10 +3316,10 @@ function createRouter(options) {
+         if (!force && isSameRouteLocation(stringifyQuery$1, from, targetLocation)) {
+             failure = createRouterError(16 /* ErrorTypes.NAVIGATION_DUPLICATED */, { to: toLocation, from });
+             // trigger scroll to allow scrolling to the same anchor
+-            handleScroll(from, from, 
++            handleScroll(from, from,
+             // this is a push, the only way for it to be triggered from a
+             // history.listen is with a redirect, which makes it become a push
+-            true, 
++            true,
+             // This cannot be the first navigation because the initial location
+             // cannot be manually navigated to
+             false);
+@@ -3358,7 +3358,7 @@ function createRouter(options) {
+                             ? assign({}, data, failure.to.state)
+                             : data,
+                         force,
+-                    }), 
++                    }),
+                     // preserve the original redirectedFrom if any
+                     redirectedFrom || toLocation);
+                 }
+@@ -3686,11 +3686,11 @@ function createRouter(options) {
+             const router = this;
+             app.component('RouterLink', RouterLink);
+             app.component('RouterView', RouterView);
+-            app.config.globalProperties.$router = router;
+-            Object.defineProperty(app.config.globalProperties, '$route', {
+-                enumerable: true,
+-                get: () => unref(currentRoute),
+-            });
++            // app.config.globalProperties.$router = router;
++            // Object.defineProperty(app.config.globalProperties, '$route', {
++            //     enumerable: true,
++            //     get: () => unref(currentRoute),
++            // });
+             // this initial navigation is only necessary on client, on server it doesn't
+             // make sense because it will create an extra unnecessary navigation and could
+             // lead to problems
+diff --git a/dist/vue-router.prod.cjs b/dist/vue-router.prod.cjs
+index 08529e2366e694192a168e555cfbdcb4ccce833f..52c866a705e95f9a17c2bd725a267dd292d845b9 100644
+--- a/dist/vue-router.prod.cjs
++++ b/dist/vue-router.prod.cjs
+@@ -662,7 +662,7 @@ function useHistoryStateNavigation(base) {
+         }
+     }
+     function replace(to, data) {
+-        const state = assign({}, history.state, buildState(historyState.value.back, 
++        const state = assign({}, history.state, buildState(historyState.value.back,
+         // keep back and forward entries but override current position
+         to, historyState.value.forward, true), data, { position: historyState.value.position });
+         changeLocation(to, state, true);
+@@ -671,7 +671,7 @@ function useHistoryStateNavigation(base) {
+     function push(to, data) {
+         // Add to current entry the information of where we are going
+         // as well as saving the current position
+-        const currentState = assign({}, 
++        const currentState = assign({},
+         // use current history state to gracefully handle a wrong call to
+         // history.replaceState
+         // https://github.com/vuejs/router/issues/366
+@@ -783,7 +783,7 @@ function createMemoryHistory(base = '') {
+         },
+         go(delta, shouldTrigger = true) {
+             const from = this.location;
+-            const direction = 
++            const direction =
+             // we are considering delta === 0 going forward, but in abstract mode
+             // using 0 for the delta doesn't make sense like it does in html5 where
+             // it reloads the page
+@@ -1487,13 +1487,13 @@ function createRouterMatcher(routes, globalOptions) {
+             name = matcher.record.name;
+             params = assign(
+             // paramsFromLocation is a new object
+-            paramsFromLocation(currentLocation.params, 
++            paramsFromLocation(currentLocation.params,
+             // only keep params that exist in the resolved location
+             // only keep optional params coming from a parent record
+             matcher.keys
+                 .filter(k => !k.optional)
+                 .concat(matcher.parent ? matcher.parent.keys.filter(k => k.optional) : [])
+-                .map(k => k.name)), 
++                .map(k => k.name)),
+             // discard any existing params in the current location that do not exist here
+             // #1497 this ensures better active/exact matching
+             location.params &&
+@@ -1880,7 +1880,7 @@ function registerGuard(record, name, guard) {
+  * @param leaveGuard - {@link NavigationGuard}
+  */
+ function onBeforeRouteLeave(leaveGuard) {
+-    const activeRecord = vue.inject(matchedRouteKey, 
++    const activeRecord = vue.inject(matchedRouteKey,
+     // to avoid warning
+     {}).value;
+     if (!activeRecord) {
+@@ -1896,7 +1896,7 @@ function onBeforeRouteLeave(leaveGuard) {
+  * @param updateGuard - {@link NavigationGuard}
+  */
+ function onBeforeRouteUpdate(updateGuard) {
+-    const activeRecord = vue.inject(matchedRouteKey, 
++    const activeRecord = vue.inject(matchedRouteKey,
+     // to avoid warning
+     {}).value;
+     if (!activeRecord) {
+@@ -2338,7 +2338,7 @@ function createRouter(options) {
+     }
+     const normalizeParams = applyToParams.bind(null, paramValue => '' + paramValue);
+     const encodeParams = applyToParams.bind(null, encodeParam);
+-    const decodeParams = 
++    const decodeParams =
+     // @ts-expect-error: intentionally avoid the type check
+     applyToParams.bind(null, decode);
+     function addRoute(parentOrRoute, route) {
+@@ -2420,7 +2420,7 @@ function createRouter(options) {
+             // keep the hash encoded so fullPath is effectively path + encodedQuery +
+             // hash
+             hash,
+-            query: 
++            query:
+             // if the user is using a custom query lib like qs, we might have
+             // nested objects, so we keep the query as is, meaning it can contain
+             // numbers at `$route.query`, but at the point, the user will have to
+@@ -2491,7 +2491,7 @@ function createRouter(options) {
+                     : data,
+                 force,
+                 replace,
+-            }), 
++            }),
+             // keep original redirectedFrom if it exists
+             redirectedFrom || targetLocation);
+         // if it was a redirect we already called `pushWithRedirect` above
+@@ -2501,10 +2501,10 @@ function createRouter(options) {
+         if (!force && isSameRouteLocation(stringifyQuery$1, from, targetLocation)) {
+             failure = createRouterError(16 /* ErrorTypes.NAVIGATION_DUPLICATED */, { to: toLocation, from });
+             // trigger scroll to allow scrolling to the same anchor
+-            handleScroll(from, from, 
++            handleScroll(from, from,
+             // this is a push, the only way for it to be triggered from a
+             // history.listen is with a redirect, which makes it become a push
+-            true, 
++            true,
+             // This cannot be the first navigation because the initial location
+             // cannot be manually navigated to
+             false);
+@@ -2530,7 +2530,7 @@ function createRouter(options) {
+                             ? assign({}, data, failure.to.state)
+                             : data,
+                         force,
+-                    }), 
++                    }),
+                     // preserve the original redirectedFrom if any
+                     redirectedFrom || toLocation);
+                 }
+@@ -2855,11 +2855,11 @@ function createRouter(options) {
+             const router = this;
+             app.component('RouterLink', RouterLink);
+             app.component('RouterView', RouterView);
+-            app.config.globalProperties.$router = router;
+-            Object.defineProperty(app.config.globalProperties, '$route', {
+-                enumerable: true,
+-                get: () => vue.unref(currentRoute),
+-            });
++            // app.config.globalProperties.$router = router;
++            // Object.defineProperty(app.config.globalProperties, '$route', {
++            //     enumerable: true,
++            //     get: () => vue.unref(currentRoute),
++            // });
+             // this initial navigation is only necessary on client, on server it doesn't
+             // make sense because it will create an extra unnecessary navigation and could
+             // lead to problems

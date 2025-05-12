@@ -1,5 +1,3 @@
-import { RouterView } from 'vue-router'
-
 export default defineComponent(() => {
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
@@ -24,5 +22,5 @@ export default defineComponent(() => {
       },
     ],
   })
-  return () => <RouterView />
+  return <RouterView />
 })

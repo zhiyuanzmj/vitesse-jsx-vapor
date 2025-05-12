@@ -1,13 +1,15 @@
 export default defineComponent(() => {
+  const route = useRoute()
   return (
     <div>
-      Not found
+      {route.meta.title}
     </div>
   )
 })
 
 definePage({
   meta: {
-    layout: 404,
+    title: 'Page 2',
+    icon: 'i-carbon:page-number',
   },
 })

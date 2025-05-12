@@ -1,4 +1,4 @@
-export default defineVaporComponent(() => {
+export default defineComponent(() => {
   const router = useRouter()
   const route = useRoute('/hi/[name]')
   const user = useUserStore()
@@ -20,7 +20,7 @@ export default defineVaporComponent(() => {
         <em>Demo of dynamic route</em>
       </p>
 
-      <template v-if="user.otherNames.length">
+      <template v-if={user.otherNames.length}>
         <div mt-4 text-sm>
           <span opacity-75>Also known as:</span>
           <ul>

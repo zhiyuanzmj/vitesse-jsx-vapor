@@ -1,6 +1,4 @@
 {
-  "cSpell.words": ["Vitesse", "Vite", "unocss", "vitest", "vueuse", "pinia", "demi", "antfu", "iconify", "intlify", "vitejs", "unplugin", "pnpm"],
-
   // Disable the default formatter
   "prettier.enable": false,
   "editor.formatOnSave": false,
