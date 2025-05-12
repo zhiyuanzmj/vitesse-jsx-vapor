@@ -59,8 +59,6 @@ Please install the VSCode plugin [ts-macro](https://github.com/ts-macro/ts-macro
 
 - 🦾 TypeScript, of course
 
-- ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest), E2E Testing with [Cypress](https://cypress.io/) on [GitHub Actions](https://github.com/features/actions)
-
 - ☁️ Deploy on Netlify, zero-config
 
 <br>
@@ -100,7 +98,6 @@ Please install the VSCode plugin [ts-macro](https://github.com/ts-macro/ts-macro
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vitest](https://github.com/vitest-dev/vitest) - Unit testing powered by Vite
-- [Cypress](https://cypress.io/) - E2E testing
 - [pnpm](https://pnpm.js.org/) - fast, disk space efficient package manager
 - [`vite-ssg`](https://github.com/antfu/vite-ssg) - Static-site generation
   - [beasties](https://github.com/danielroe/beasties) - Critical CSS

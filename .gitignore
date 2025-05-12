@@ -7,5 +7,4 @@ dist-ssr
 node_modules
 .idea/
 *.log
-cypress/downloads
 public/assets/fonts

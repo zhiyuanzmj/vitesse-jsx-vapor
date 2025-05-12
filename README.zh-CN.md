@@ -53,8 +53,6 @@
 
 - 🦾 TypeScript, 当然
 
-- ⚙️ 结合 [GitHub Actions](https://github.com/features/actions)，使用 [Vitest](https://github.com/vitest-dev/vitest) 进行单元测试, [Cypress](https://cypress.io/) 进行 E2E 测试
-
 - ☁️ 零配置部署 Netlify
 
 <br>
@@ -93,7 +91,6 @@
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vitest](https://github.com/vitest-dev/vitest) - 基于 Vite 的单元测试框架
-- [Cypress](https://cypress.io/) - E2E 测试
 - [pnpm](https://pnpm.js.org/) - 快, 节省磁盘空间的包管理器
 - [`vite-ssg`](https://github.com/antfu/vite-ssg) - 服务端生成
   - [beasties](https://github.com/danielroe/beasties) - 关键 CSS 生成器
