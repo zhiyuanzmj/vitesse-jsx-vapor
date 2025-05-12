@@ -132,8 +132,6 @@ export const RouterViewImpl = /* #__PURE__ */ defineComponent({
       { flush: 'post' },
     )
 
-    const setTemplateRef = createTemplateRefSetter()
-
     return createNodes(() => {
       const route = routeToDisplay.value
       // we need the value at the time we render because when we unmount, we
@@ -171,7 +169,7 @@ export const RouterViewImpl = /* #__PURE__ */ defineComponent({
           // onVnodeUnmounted,
         }),
       )
-      setTemplateRef(component, viewRef)
+      createTemplateRefSetter()(component, viewRef)
 
       return (
         // pass the vnode to the slot as a prop.
