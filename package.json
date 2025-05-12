@@ -73,7 +73,7 @@
   "resolutions": {
     "unplugin": "^2.1.2",
     "vite": "^6.0.7",
-    "vite-plugin-inspect": "^10.0.6"
+    "vite-plugin-inspect": "^11.0.1"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"

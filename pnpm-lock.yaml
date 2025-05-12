@@ -7,7 +7,7 @@ settings:
 overrides:
   unplugin: ^2.1.2
   vite: ^6.0.7
-  vite-plugin-inspect: ^10.0.6
+  vite-plugin-inspect: ^11.0.1
 
 patchedDependencies:
   pinia:
@@ -140,7 +140,7 @@ importers:
         specifier: https://pkg.pr.new/unplugin-vue-router@82ecaae
         version: https://pkg.pr.new/unplugin-vue-router@82ecaae(vue-router@4.5.1(patch_hash=66597201c3438617b6d7c3d5932e53bbfa991da0bd0790d1c2b05d1f41dc6774)(vue@https://pkg.pr.new/vue@d386396(typescript@5.8.3)))(vue@https://pkg.pr.new/vue@d386396(typescript@5.8.3))
       vite:
-        specifier: ^6.3.5
+        specifier: ^6.0.7
         version: 6.3.5(@types/node@22.15.17)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.2)(yaml@2.7.1)
       vite-bundle-visualizer:
         specifier: ^1.2.1
@@ -5520,16 +5520,6 @@ packages:
     resolution: {integrity: sha512-uHV4plJ2IxCl4u1up1FQRrqclylKAogbtBfOTwcuJ28xFi+89PZ57BRh+naIRvH70HPwxy5QHYzg1OrEaC7AbA==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
-
-  vite-plugin-inspect@10.3.0:
-    resolution: {integrity: sha512-hMJh8ecd6R8tXQ9aaSWaDvClpFeL7zAVOfryC07phZkqtCEpI2VyYrzARuVlHMKEdYW6w0JXFgAY+uc8mdMl+Q==}
-    engines: {node: '>=14'}
-    peerDependencies:
-      '@nuxt/kit': '*'
-      vite: ^6.0.7
-    peerDependenciesMeta:
-      '@nuxt/kit':
-        optional: true
 
   vite-plugin-inspect@11.0.1:
     resolution: {integrity: sha512-aABw7eGTr9Cmbn9RAs76e0BztVUFDl6a2R+/IJXpoUZxjx5YHB0P+Em3ZTWzpIPZzuRj28tAMblvcUyhgJc4aQ==}
@@ -12306,19 +12296,6 @@ snapshots:
       - tsx
       - yaml
 
-  vite-plugin-inspect@10.3.0(@nuxt/kit@3.17.2)(vite@6.3.5(@types/node@22.15.17)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.2)(yaml@2.7.1)):
-    dependencies:
-      ansis: 3.17.0
-      debug: 4.4.0(supports-color@8.1.1)
-      error-stack-parser-es: 1.0.5
-      open: 10.1.2
-      sirv: 3.0.1
-      vite: 6.3.5(@types/node@22.15.17)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.2)(yaml@2.7.1)
-    optionalDependencies:
-      '@nuxt/kit': 3.17.2
-    transitivePeerDependencies:
-      - supports-color
-
   vite-plugin-inspect@11.0.1(@nuxt/kit@3.17.2)(vite@6.3.5(@types/node@22.15.17)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.2)(yaml@2.7.1)):
     dependencies:
       ansis: 3.17.0
@@ -12355,7 +12332,7 @@ snapshots:
       execa: 9.5.3
       sirv: 3.0.1
       vite: 6.3.5(@types/node@22.15.17)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.2)(yaml@2.7.1)
-      vite-plugin-inspect: 10.3.0(@nuxt/kit@3.17.2)(vite@6.3.5(@types/node@22.15.17)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.2)(yaml@2.7.1))
+      vite-plugin-inspect: 11.0.1(@nuxt/kit@3.17.2)(vite@6.3.5(@types/node@22.15.17)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.2)(yaml@2.7.1))
       vite-plugin-vue-inspector: 5.3.1(vite@6.3.5(@types/node@22.15.17)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.2)(yaml@2.7.1))
     transitivePeerDependencies:
       - '@nuxt/kit'
