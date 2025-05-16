@@ -161,7 +161,9 @@ export const RouterViewImpl = /* #__PURE__ */ defineComponent({
           : null
         const component = createComponent(
           ViewComponent.value as VaporComponent,
-          assign({}, routeProps, attrs),
+          {
+            $: [() => assign({}, routeProps, attrs)],
+          },
         )
         createTemplateRefSetter()(component, viewRef)
 
