@@ -4,6 +4,7 @@ import type {
   ComponentPublicInstance,
   PropType,
   Slot,
+  VaporComponent,
   VNode,
   VNodeProps,
 } from 'vue'
@@ -16,6 +17,7 @@ import type {
 import {
   computed,
   createComponent,
+  createDynamicComponent,
   createTemplateRefSetter,
   defineComponent,
   inject,
@@ -24,7 +26,6 @@ import {
   unref,
   watch,
 } from 'vue'
-import { createNodes } from 'vue-jsx-vapor'
 import {
   matchedRouteKey,
   routerViewLocationKey,
@@ -132,51 +133,45 @@ export const RouterViewImpl = /* #__PURE__ */ defineComponent({
       { flush: 'post' },
     )
 
-    return createNodes(() => {
-      const route = routeToDisplay.value
+    const ViewComponent = computed(() => {
+      const currentName = props.name
+      const matchedRoute = matchedRouteRef.value
+      return matchedRoute && matchedRoute.components![currentName]
+    })
+
+    return createDynamicComponent(() => {
       // we need the value at the time we render because when we unmount, we
       // navigated to a different location so the value is different
       const currentName = props.name
-      const matchedRoute = matchedRouteRef.value
-      const ViewComponent
-        = matchedRoute && matchedRoute.components![currentName]
 
-      if (!ViewComponent) {
-        return normalizeSlot(slots.default, { Component: ViewComponent, route })
+      if (!ViewComponent.value) {
+        return () => normalizeSlot(slots.default, { Component: ViewComponent.value, route: routeToDisplay.value })
       }
 
-      // props from route configuration
-      const routePropsOption = matchedRoute.props[currentName]
-      const routeProps = routePropsOption
-        ? routePropsOption === true
-          ? route.params
-          : typeof routePropsOption === 'function'
-            ? routePropsOption(route)
-            : routePropsOption
-        : null
+      return () => {
+        const route = routeToDisplay.value
+        // props from route configuration
+        const routePropsOption = matchedRouteRef.value && matchedRouteRef.value.props[currentName]
+        const routeProps = routePropsOption
+          ? routePropsOption === true
+            ? route.params
+            : typeof routePropsOption === 'function'
+              ? routePropsOption(route)
+              : routePropsOption
+          : null
+        const component = createComponent(
+          ViewComponent.value as VaporComponent,
+          assign({}, routeProps, attrs),
+        )
+        createTemplateRefSetter()(component, viewRef)
 
-      // const onVnodeUnmounted: VNodeProps['onVnodeUnmounted'] = vnode => {
-      // console.log('onVnodeUnmounted', vnode)
-      // remove the instance reference to prevent leak
-      // if (vnode.component!.isUnmounted) {
-      //   matchedRoute.instances[currentName] = null
-      // }
-      // }
-      const component = createComponent(
-        // @ts-expect-error ingore
-        ViewComponent,
-        assign({}, routeProps, attrs, {
-          // onVnodeUnmounted,
-        }),
-      )
-      createTemplateRefSetter()(component, viewRef)
-
-      return (
-        // pass the vnode to the slot as a prop.
-        // h and <component :is="..."> both accept vnodes
-        normalizeSlot(slots.default, { Component: component, route })
-        || component
-      )
+        return (
+          // pass the node to the slot as a prop.
+          // h and <component :is="..."> both accept nodes
+          normalizeSlot(slots.default, { Component: component, route })
+          || component
+        )
+      }
     })
   },
 })
