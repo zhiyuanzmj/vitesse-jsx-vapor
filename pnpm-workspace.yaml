@@ -1,3 +1,2 @@
 patchedDependencies:
   pinia: patches/pinia.patch
-  vue-router: patches/vue-router.patch

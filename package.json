@@ -23,9 +23,9 @@
     "beasties": "^0.3.3",
     "nprogress": "^0.2.0",
     "pinia": "^3.0.2",
-    "vue": "https://pkg.pr.new/vue@d386396",
-    "vue-jsx-vapor": "^2.3.6",
-    "vue-router": "^4.5.1"
+    "vue": "https://pkg.pr.new/vue@280bc48",
+    "vue-jsx-vapor": "^2.4.3",
+    "vue-router": "https://pkg.pr.new/vue-router@2509"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.13.0",

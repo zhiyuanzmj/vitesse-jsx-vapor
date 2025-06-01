@@ -7,7 +7,6 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
-  const RouterLink: typeof import('vue-router')['RouterLink']
   const RouterView: typeof import('./components/RouterView')['RouterView']
   const RouterViewImpl: typeof import('./components/RouterView')['RouterViewImpl']
   const TheCounter: typeof import('./components/TheCounter')['default']

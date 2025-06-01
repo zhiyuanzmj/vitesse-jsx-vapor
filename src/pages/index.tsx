@@ -1,4 +1,4 @@
-export default defineComponent(() => {
+export default defineVaporComponent(() => {
   const user = useUserStore()
   let name = $ref(user.savedName)
 
