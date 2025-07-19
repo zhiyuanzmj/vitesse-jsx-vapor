@@ -1,11 +1,11 @@
-export default defineComponent(({
+export default defineVaporComponent(({
   initial = 0,
 }) => {
-  let { count, inc, dec } = $useCounter(initial)
+  let { count, inc, dec } = useCounter(initial)
 
   return (
     <div>
-      { count }
+      { count.value }
       <button class="inc" onClick={() => inc()}>
         +
       </button>

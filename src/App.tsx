@@ -1,6 +1,4 @@
-import { VaporRouterView } from 'vue-router'
-
-export default defineComponent(() => {
+export default defineVaporComponent(() => {
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
 // they will be rendered correctly in the html results with vite-ssg
@@ -24,5 +22,5 @@ export default defineComponent(() => {
       },
     ],
   })
-  return <VaporRouterView />
+  return <RouterView />
 })

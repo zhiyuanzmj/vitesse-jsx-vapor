@@ -2,7 +2,7 @@ import type { UserModule } from './types'
 import { setupLayouts } from 'virtual:generated-layouts'
 
 // import { ViteSSG } from 'vite-ssg'
-import { createVaporApp } from 'vue'
+import { createVaporApp, vaporInteropPlugin } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { routes } from 'vue-router/auto-routes'
 
@@ -11,12 +11,13 @@ import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 import 'uno.css'
 
-const app = createVaporApp(App)
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: setupLayouts(routes),
 })
-app.use(router)
+const app = createVaporApp(App)
+  .use(vaporInteropPlugin)
+  .use(router)
 Object.values(import.meta.glob<{ install: UserModule }>('./modules/*.ts', { eager: true }))
   // @ts-expect-error app type is error
   .forEach(i => i.install?.({ isClient: true, router, app }))

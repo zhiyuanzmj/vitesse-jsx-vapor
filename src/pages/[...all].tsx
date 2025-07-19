@@ -1,4 +1,4 @@
-export default defineComponent(() => {
+export default defineVaporComponent(() => {
   return (
     <div>
       Not found

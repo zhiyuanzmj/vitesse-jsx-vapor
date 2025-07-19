@@ -1,9 +1,6 @@
 import path from 'node:path'
-import Vue from '@vitejs/plugin-vue'
-import VueJsx from '@vitejs/plugin-vue-jsx'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import VueReactivityFunction from 'unplugin-vue-reactivity-function/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
@@ -23,16 +20,11 @@ export default defineConfig({
   },
 
   plugins: [
-    // https://github.com/zhiyaunzmj/unplugin-vue-reactivity-function
-    VueReactivityFunction(),
-
     // https://github.com/vuejs/vue-jsx-vapor
     VueJsxVapor({
-      // interop: true,
+      interop: true,
       macros: true,
     }),
-    Vue(),
-    VueJsx(),
 
     // https://github.com/posva/unplugin-vue-router
     VueRouter({
@@ -42,7 +34,7 @@ export default defineConfig({
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
     Layouts({
-      extensions: ['tsx', 'vue'],
+      extensions: ['tsx'],
     }),
 
     // https://github.com/antfu/unplugin-auto-import
@@ -60,19 +52,22 @@ export default defineConfig({
         {
           vue: ['defineVaporComponent'],
         },
+        {
+          'vue-jsx-vapor': ['useProps', 'useFullProps', 'useRef'],
+        },
       ],
       resolvers: [
-        // {
-        //   type: 'component',
-        //   resolve: (name) => {
-        //     if (['RouterLink', 'RouterView'].includes(name)) {
-        //       return {
-        //         name,
-        //         from: 'vue-router',
-        //       }
-        //     }
-        //   },
-        // },
+        {
+          type: 'component',
+          resolve: (name: string) => {
+            if (['RouterLink', 'RouterView'].includes(name)) {
+              return {
+                name: `Vapor${name}`,
+                from: 'vue-router',
+              }
+            }
+          },
+        },
       ],
       dts: 'src/auto-imports.d.ts',
       dirs: [

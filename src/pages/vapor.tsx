@@ -1,14 +1,15 @@
 export default defineVaporComponent(() => {
+  const route = useRoute()
   return (
     <div>
-      Vue JSX Vapor
+      {route.meta.title}
     </div>
   )
 })
 
 definePage({
   meta: {
-    title: 'JSX Vapor',
+    title: 'Vapor DOM',
     icon: 'i-carbon:logo-vue',
   },
 })

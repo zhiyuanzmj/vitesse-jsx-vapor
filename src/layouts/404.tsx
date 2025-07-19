@@ -1,4 +1,4 @@
-export default defineComponent(() => {
+export default defineVaporComponent(() => {
   const router = useRouter()
 
   return (

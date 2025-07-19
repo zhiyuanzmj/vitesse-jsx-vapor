@@ -1,6 +1,6 @@
-export default defineVaporComponent(() => {
+export default defineComponent(() => {
   const route = useRoute()
-  return (
+  return () => (
     <div>
       {route.meta.title}
     </div>
@@ -9,7 +9,7 @@ export default defineVaporComponent(() => {
 
 definePage({
   meta: {
-    title: 'Page 2',
+    title: 'Virtual DOM',
     icon: 'i-carbon:page-number',
   },
 })

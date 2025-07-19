@@ -1,7 +1,6 @@
-import { VaporRouterLink } from 'vue-router'
 import { routes } from 'vue-router/auto-routes'
 
-export default defineComponent(() => {
+export default defineVaporComponent(() => {
   const router = useRouter()
 
   return (
@@ -23,11 +22,12 @@ export default defineComponent(() => {
       <div mb-3 mt-6 op70>
         Other pages:
       </div>
+
       <nav flex="~ gap-4" justify-center text-xl mb-6>
-        <VaporRouterLink v-for={i in routes.filter(i => i.meta?.title)} key={i.path} title={i.meta?.title} icon-btn flex="~ col items-center" to={i.path}>
+        <a v-for={i in routes.filter(i => i.meta?.title)} key={i.path} title={i.meta?.title} icon-btn flex="~ col items-center" onClick={() => router.push(i.path)}>
           <div class={i.meta?.icon} />
           <div text-sm>{ i.meta?.title }</div>
-        </VaporRouterLink>
+        </a>
       </nav>
     </>
   )

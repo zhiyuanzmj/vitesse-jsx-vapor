@@ -1,4 +1,3 @@
-import { VaporRouterView } from 'vue-router'
 import TheFooter from '../components/TheFooter'
 
 export default defineVaporComponent(() => {
@@ -8,9 +7,7 @@ export default defineVaporComponent(() => {
       py-10
       text="center gray-700 dark:gray-200"
     >
-      <VaporRouterView v-slot={{ Component }}>
-        {Component}
-      </VaporRouterView>
+      <RouterView />
       <TheFooter />
       <div mx-auto mt-5 text-center text-sm opacity-50>
         [Home Layout]

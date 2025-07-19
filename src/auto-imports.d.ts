@@ -7,7 +7,8 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
-  const RouterView: typeof import('./components/RouterView')['RouterView']
+  const RouterLink: typeof import('vue-router')['VaporRouterLink']
+  const RouterView: typeof import('vue-router')['VaporRouterView']
   const RouterViewImpl: typeof import('./components/RouterView')['RouterViewImpl']
   const TheCounter: typeof import('./components/TheCounter')['default']
   const TheFooter: typeof import('./components/TheFooter')['default']
@@ -198,6 +199,7 @@ declare global {
   const useFocus: typeof import('@vueuse/core')['useFocus']
   const useFocusWithin: typeof import('@vueuse/core')['useFocusWithin']
   const useFps: typeof import('@vueuse/core')['useFps']
+  const useFullProps: typeof import('vue-jsx-vapor')['useFullProps']
   const useFullscreen: typeof import('@vueuse/core')['useFullscreen']
   const useGamepad: typeof import('@vueuse/core')['useGamepad']
   const useGeolocation: typeof import('@vueuse/core')['useGeolocation']
@@ -246,7 +248,9 @@ declare global {
   const usePreferredReducedMotion: typeof import('@vueuse/core')['usePreferredReducedMotion']
   const usePreferredReducedTransparency: typeof import('@vueuse/core')['usePreferredReducedTransparency']
   const usePrevious: typeof import('@vueuse/core')['usePrevious']
+  const useProps: typeof import('vue-jsx-vapor')['useProps']
   const useRafFn: typeof import('@vueuse/core')['useRafFn']
+  const useRef: typeof import('vue-jsx-vapor')['useRef']
   const useRefHistory: typeof import('@vueuse/core')['useRefHistory']
   const useResizeObserver: typeof import('@vueuse/core')['useResizeObserver']
   const useRoute: typeof import('vue-router')['useRoute']

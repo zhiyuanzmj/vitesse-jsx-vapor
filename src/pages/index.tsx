@@ -1,11 +1,11 @@
 export default defineVaporComponent(() => {
   const user = useUserStore()
-  let name = $ref(user.savedName)
+  const name = ref(user.savedName)
 
   const router = useRouter()
   function go() {
     if (name)
-      router.push(`/hi/${encodeURIComponent(name)}`)
+      router.push(`/hi/${encodeURIComponent(name.value)}`)
   }
 
   return (
@@ -25,7 +25,7 @@ export default defineVaporComponent(() => {
       <div py-4 />
 
       <TheInput
-        v-model={name}
+        v-model={name.value}
         placeholder="What's your name?"
         autocomplete="false"
         onKeydown_enter={go}
@@ -38,7 +38,7 @@ export default defineVaporComponent(() => {
           m-3
           text-sm
           btn
-          disabled={!name}
+          disabled={!name.value}
           onClick={go}
         >
           Go

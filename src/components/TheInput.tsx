@@ -1,6 +1,6 @@
 import type { InputHTMLAttributes } from 'vue'
 
-export default defineComponent((_: InputHTMLAttributes) => {
+export default defineVaporComponent((_: InputHTMLAttributes) => {
   const modelValue = defineModel<string>()
 
   return (
