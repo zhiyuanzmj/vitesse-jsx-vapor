@@ -1,8 +1,6 @@
 import path from 'node:path'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
-import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
 import Inspect from 'vite-plugin-inspect'
 import { VitePWA } from 'vite-plugin-pwa'
@@ -10,6 +8,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 import Layouts from 'vite-plugin-vue-layouts'
 // import generateSitemap from 'vite-ssg-sitemap'
 import VueJsxVapor from 'vue-jsx-vapor/vite'
+import { VueRouterAutoImports } from 'vue-router/unplugin'
+import VueRouter from 'vue-router/vite'
 import 'vitest/config'
 
 export default defineConfig({
@@ -30,7 +30,7 @@ export default defineConfig({
       macros: true,
     }),
 
-    // https://github.com/posva/unplugin-vue-router
+    // https://github.com/vuejs/router
     VueRouter({
       extensions: ['.tsx'],
       dts: 'src/typed-router.d.ts',

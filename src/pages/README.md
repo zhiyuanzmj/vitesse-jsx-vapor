@@ -1,7 +1,7 @@
 ## File-based Routing
 
 Routes will be auto-generated for Vue files in this dir with the same file structure.
-Check out [`unplugin-vue-router`](https://github.com/posva/unplugin-vue-router) for more details.
+Check out [`vue-router`](https://github.com/vuejs/router) for more details.
 
 ### Path Aliasing
 
