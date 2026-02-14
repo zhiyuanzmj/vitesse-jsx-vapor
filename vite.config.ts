@@ -20,6 +20,10 @@ export default defineConfig({
   },
 
   plugins: [
+    // https://github.com/antfu/unocss
+    // see uno.config.ts for config
+    Unocss(),
+
     // https://github.com/vuejs/vue-jsx-vapor
     VueJsxVapor({
       interop: true,
@@ -77,10 +81,6 @@ export default defineConfig({
         'src/stores',
       ],
     }),
-
-    // https://github.com/antfu/unocss
-    // see uno.config.ts for config
-    Unocss(),
 
     // https://github.com/antfu/vite-plugin-pwa
     VitePWA({
