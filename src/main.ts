@@ -13,7 +13,7 @@ import 'uno.css'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: setupLayouts(routes),
+  routes: setupLayouts(routes as any),
 })
 const app = createVaporApp(App)
   .use(vaporInteropPlugin)
